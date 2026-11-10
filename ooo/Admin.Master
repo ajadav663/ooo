@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="ooo.Admin" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" enctype="multipart/form-data">
+        <div class="d-flex">
+            <!-- Sidebar Navigation -->
+            <div class="bg-dark text-white p-3 min-vh-100" style="width: 250px;">
+                <h3>Admin Panel</h3>
+                <hr />
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="AdminDashboard.aspx" class="nav-link text-white">Dashboard</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="AddProduct.aspx" class="nav-link text-white">Add Product</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="ManageProducts.aspx" class="nav-link text-white">Manage Products</a>
+                    </li>
+
+                    <!-- Navu Manage Orders Button Add Karyu -->
+                    <li class="nav-item mb-2">
+                        <a href="ManageOrders.aspx" class="nav-link text-white">Manage Orders</a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="btn btn-danger w-100">Logout</asp:LinkButton>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Page Content Placeholder -->
+            <div class="p-4 w-100">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
